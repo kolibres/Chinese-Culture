@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        #slideshow {
+            width: 600px;
+            height: 390px;
+            overflow: hidden;
+            position: relative;
+            margin: 0 auto;
+        }
+        
+        #imglist li {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            /* 全部图片设为透明 */
+            opacity: 0;
+            /* transition: opacity 3.5s; */
+        }
+        
+        #imglist>li img {
+            height: 390px;
+            width: 600px;
+        }
+        
+        #dotlist {
+            position: absolute;
+            bottom: 30px;
+            width: 165px;
+            display: flex;
+            justify-content: space-between;
+            left: 427.5px;
+            top: 367.5px;
+        }
+        
+        #dotlist>li {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color:black;
+            /* 全部小圆点设为半透明 */
+            opacity: 60%;
+            cursor: pointer;
+            user-select: none;
+            
+        }
+        /* 具有appear类的元素设为 不透明 即显示 */
+        #dotlist li:hover{
+            background-color: white;
+            opacity: 30%;
+        }
+        #imglist>li.appear{
+            opacity: 1;
+        }
+        #dotlist>li.appear {
+            background-color: white;
+            opacity: 70%;
+        }
+        /* 左右轮播按钮 */
+        
+        #pre,
+        /* #next {
+            position: absolute;
+            font-size: 100px;
+            color: rgba(0, 0, 0, .3);
+            top: 50%;
+            transform: translate(0, -50%);
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        } */
+        
+        /* #pre {
+            left: 20px;
+        }
+        
+        #next {
+            right: 20px;
+        } */
+        
+        /* #pre:hover,
+        #next:hover {
+            color: rgba(255, 255, 255, .3);
+        } */
+    </style>
+</head>
+
+<body>
+
+    <div id="slideshow">
+        <ul id="imglist">
+            <li><img src="./image/lunbo/lunbo01.jpg"></li>
+            <li><img src="./image/lunbo/lunbo02.jpg"></li>
+            <li><img src="./image/lunbo/lunbo03.jpg"></li>
+            <li><img src="./image/lunbo/lunbo04.jpg"></li>
+            <li><img src="./image/lunbo/lunbo05.jpg"></li>
+            <li><img src="./image/lunbo/lunbo06.jpg"></li>
+        </ul>
+        <ul id="dotlist">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <!-- <div id="pre">&lt;</div>
+        <div id="next">&gt;</div> -->
+    </div>
+    <script>
+        // 找对象
+        var slideShow = document.getElementById("slideshow");
+        var imgList = document.getElementById("imglist");
+        var imgs = imgList.children;
+        var dotList = document.getElementById("dotlist");
+        var dots = dotlist.children;
+        // var pre = document.getElementById("pre");
+        // var next = document.getElementById("next");
+        var duration = 3000; // 设置轮播时间间隔
+        var Index = 0;
+        var count = imglist.children.length; // 获取图片数量
+        var timer; // 设置一个计时器
+
+        window.onload = function() {
+            imgList.children[0].classList.add("appear"); // 初始时显示第一幅图片
+            dotList.children[0].classList.add("appear"); // 初始时第一个点为白色
+
+            //为每个点添加单击处理函数
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].index = i;
+                dots[i].onclick = changeMe;
+            }
+
+            //启动动画自动播放
+            timer = setInterval(rotate, duration);
+
+            // 鼠标移到图片上面时，停止动画
+            slideShow.onmouseover = function(event) {
+                clearInterval(timer);
+            };
+
+            // 鼠标离开图片上面时，启动动画
+            slideShow.onmouseout = function(event) {
+                timer = setInterval(rotate, duration);
+            };
+
+            //左右播放图片
+            pre.onclick = preImg;
+            next.onclick = nextImg;
+        }
+
+        //改变图片和点的当前状态（通过 添加 或 移除 appear 属性）
+        function change() {
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("appear");
+                imgs[i].classList.remove("appear");
+            }
+            dots[Index].classList.add("appear");
+            imgs[Index].classList.add("appear");
+        }
+
+        //循环切换图片
+        function rotate() {
+            Index++;
+            if (Index == count) {
+                Index = 0;
+            }
+            change();
+        }
+
+        //切换上一幅图片
+        function preImg() {
+            Index--;
+            if (Index < 0) {
+                Index = count - 1;
+            }
+            change();
+        }
+
+        //切换下一幅图片
+        function nextImg() {
+            Index++;
+            if (Index == count) {
+                Index = 0;
+            }
+            change();
+        }
+
+        //单击某个圆点，切换到相应图片
+        function changeMe() {
+            Index = this.index;
+            change();
+        }
+    </script>
+</body>
+
+</html>

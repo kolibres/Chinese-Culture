@@ -1,0 +1,349 @@
+.headimg{
+    height: 80px;
+    text-align: center;
+    background-color: #ff5f33;
+}
+.navigation{
+    width: 1080px;
+    height: 50px;
+    margin: auto;
+    display: flex;
+}
+.navigationimg1{
+    height: 50px;
+    
+}
+.navigationimg2{
+    height: 50px;
+    margin-left: -20px;
+}
+.input1{
+    border-style: solid;
+    height: 25px; 
+    width: 160px; 
+    text-indent: 1em; 
+    border-color: red;
+    outline-color: grey;
+    margin-left: 5px;
+    font-size: 16px;
+}
+.inputbutton{
+    height: 25px; 
+    width: 40px; 
+    margin-left: 10px;
+    font-size: 15px;
+    padding-left: 2.5px;
+}
+.center{
+    width: 360px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+}
+.right{
+    width: 360px; 
+    display: flex; 
+    align-items: center;
+    flex-direction: row-reverse;
+}
+a {
+    text-decoration: none;
+}
+#register{
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    font-family: 黑体;
+    justify-content: center;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+}
+#register a:hover{
+    color: #f82525;
+    font-family: 黑体;
+}
+#login{
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    background-color: #f82525;
+    height: 25px;
+    width: 40px;
+    border-radius: 10px;
+    font-family: 黑体;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#login a:hover{
+    color: #000000;
+    font-family: 黑体;
+}
+.divide1{
+    background-color: #cccccc;
+    width: 100%;
+    height: 1px;
+}
+.caidan{
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    width: 1080px;
+    margin: auto;
+}
+.caidan p{
+    cursor: pointer;
+    font-size: 22px;
+    font-family: 楷体;
+    font-weight: bold;
+    margin: 0px;
+}
+.caidan p:hover{
+    color: #f82525;
+}
+.caidan div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.divide2{
+    background-color: #cccccc;
+    width: 1080px;
+    height: 1px;
+    margin: auto;
+    margin-bottom: 5px;
+}
+.toutiao1{
+    width: 1080px;
+    display: flex;
+    height: 390px;
+    margin: auto;
+    justify-content: space-between;
+}
+#slideshow{
+    width: 600px;
+    height: 390px;
+    /* overflow: hidden; */
+    position: relative;
+    
+}
+#imglist{
+    padding: 0px;
+    margin: 0px;
+}
+#imglist li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    /* 全部图片设为透明 */
+    opacity: 0;
+    list-style: none;
+    /* transition: opacity 3.5s; */
+}
+
+#imglist>li img {
+    height: 390px;
+    width: 600px;
+}
+#imglist p{
+    font-family: 方正姚体;
+    height: 27px;
+    padding-top: 3px;
+    background-color: black;
+    opacity: 60%;
+    color: white;
+    font-size: 18px;
+    text-indent: 1em;
+    cursor: pointer;
+    position: relative;
+    top: -52px;
+}
+#dotlist {
+    position: absolute;
+    bottom: 30px;
+    width: 165px;
+    display: flex;
+    justify-content: space-between;
+    left: 387.5px;
+    top: 352px;
+    list-style: none;
+}
+
+#dotlist>li {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color:black;
+    /* 全部小圆点设为半透明 */
+    opacity: 60%;
+    cursor: pointer;
+    user-select: none;
+    
+}
+/* 具有appear类的元素设为 不透明 即显示 */
+#dotlist li:hover{
+    background-color: white;
+    opacity: 30%;
+}
+#imglist>li.appear{
+    opacity: 1;
+}
+#dotlist>li.appear {
+    background-color: white;
+    opacity: 70%;
+}
+.toutiao2{
+    height: 390px;
+    width: 450px;
+    
+}
+.title1{
+    height: 40px;
+    background-color: #f82525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title1 p{
+    color: white;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    margin: 0px;
+    padding-left: 20px;
+    cursor: pointer;
+    width: 4em;
+    margin: 0;
+}
+.content{
+    background-color: #cccccc;
+    height: 350px;
+    width: 450px;
+}
+.content p{
+    font-size: 16px;
+    font-family: 微软雅黑;
+    width: 400px;
+    margin-top: 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+.zonglan{
+    height: 790px;
+    width: 1080px;
+    margin: auto;
+    margin-top: 15px;
+    background-color: #cccccc;
+    margin-bottom: 5px;
+}
+.title2{
+    height: 40px;
+    margin: auto;
+    background-color: #f82525;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title2 p{
+    color: white;
+    font-family: 微软雅黑;
+    font-size: 20px;
+    margin: 0px;
+    padding-left: 30px;
+    cursor: pointer;
+    width: 4em;
+    margin: 0;
+}
+.neirong{
+    background-color: #cccccc;
+    height: 750px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 0px;
+}
+.group1{
+    height: 160px;
+    width: 510px;
+    border-bottom-style: solid;
+    border-color: #383838;
+    border-width: 2px;
+    margin-top: 20.4px;
+    display: flex;
+    justify-content: space-between;
+}
+.group{
+    height: 160px;
+    width: 510px;
+    border-bottom-style: solid;
+    border-color: #383838;
+    border-width: 2px;
+    display: flex;
+    justify-content: space-between;
+}
+.neirong img{
+    height: 155px;
+    width: 250px;
+}
+.neirongtu{
+    height: 155px;
+    width: 250px;
+}
+.wenzi{
+    height: 155px;
+    width: 240px;
+}
+.p1{
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: auto;
+}
+.p2{
+    font-size: 15px;
+    text-align: justify;
+    margin: auto;
+}
+.divide3{
+    background-color: #cccccc;
+    width: 100%;
+    height: 1px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.yedi{
+    margin: auto;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+}
+.yedi a{
+    font-size: 15px;
+    color: grey;
+}
+.yedi a:hover{
+    color: #f82525;
+}
+.yedi p{
+    font-size: 15px;
+    color: grey;
+    line-height: 25px;
+    margin: auto;
+}
+#backTop {
+    color: grey;
+    font-size: 40px; 
+    position: fixed; 
+    right: 80px; 
+    bottom: 80px;
+    cursor: pointer;
+    display: none;
+}
+#backTop i:hover{
+    color: #f82525;
+}
